@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Note from './Note.js';
+import NoteApp from './NoteApp.js'
 
 class App extends Component {
   constructor(props){
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.saveNote = this.saveNote.bind(this);
   }
   
   componentWillMount(){
@@ -14,7 +16,7 @@ class App extends Component {
   }
 
   state = {
-    count: 1
+    notes:new Array()
   }
 
   handleClick(){
@@ -23,14 +25,18 @@ class App extends Component {
       return {count: prevState.count + 1}
     });
   }
+
+  saveNote(param){
+    this.setState({
+      notes: [...this.state.notes, param]
+    })
+  }
   
   render() {
     console.log("Render");
     return (
       <div>
-      <div>My First Component</div>
-      <div onClick={this.handleClick}> Add Note </div>
-      <Note note={'This is my note content'} isUrgent={true} count={this.state.count}/>
+      <NoteApp saveNote={this.saveNote}/>
       </div>
     );
   }
