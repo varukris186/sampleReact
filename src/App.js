@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Note from './Note.js';
 import NoteApp from './NoteApp.js'
+import NoteList from './NoteList.js'
 
 class App extends Component {
   constructor(props){
@@ -37,6 +38,7 @@ class App extends Component {
     return (
       <div>
       <NoteApp saveNote={this.saveNote}/>
+      <NoteList notes={this.state.notes}/>
       </div>
     );
   }
