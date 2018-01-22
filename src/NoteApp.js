@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import Helper from './Helper.js'
+
 
 class NoteApp extends Component {
   constructor(props){
@@ -36,11 +38,15 @@ class NoteApp extends Component {
     return (
       <div>
           <div class="title">Enter a New Note </div>
+          <div>
           <textarea id="txtArea" value={this.state.value} placeholder={this.state.placeholder} onChange={this.setValue}  minLength={this.state.minLength} maxLength={this.state.maxLength}></textarea>
+          </div>
+          <Helper message={"Help is granted"} /> 
           <div class="btn-grp">
               <button onClick={() => this.props.saveNote(this.state.value)}>Add</button>
               <button onClick={this.clearText}>Clear</button>
-          </div>    
+          </div>   
+          
       </div>
     )
   }

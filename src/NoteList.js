@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+
 class NoteList extends Component {
 
   constructor(props){
@@ -21,6 +22,7 @@ class NoteList extends Component {
          {
             this.props.notes.map(this.renderNotesList)
          }
+         
       </div>
     )
   }

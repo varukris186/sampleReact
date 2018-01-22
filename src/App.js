@@ -5,6 +5,7 @@ import Note from './Note.js';
 import NoteApp from './NoteApp.js'
 import NoteList from './NoteList.js'
 
+
 class App extends Component {
   constructor(props){
     super(props);
@@ -39,6 +40,7 @@ class App extends Component {
       <div>
       <NoteApp saveNote={this.saveNote}/>
       <NoteList notes={this.state.notes}/>
+     
       </div>
     );
   }
