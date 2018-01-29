@@ -4,6 +4,7 @@ import './App.css';
 import Note from './Note.js';
 import NoteApp from './NoteApp.js'
 import NoteList from './NoteList.js'
+import RepairField from './RepairField.js'
 
 
 class App extends Component {
@@ -40,7 +41,7 @@ class App extends Component {
       <div>
       <NoteApp saveNote={this.saveNote}/>
       <NoteList notes={this.state.notes}/>
-     
+      <RepairField oldValue='Alpha Industries' newValue='Alpho Industries'></RepairField>
       </div>
     );
   }
